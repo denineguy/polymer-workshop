@@ -1,0 +1,175 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<link rel="import" href="../x-factory/x-factory.html">
+
+<link rel="import" href="../highlight-behavior.html">
+
+<dom-module id="page-playground">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1">
+      <firebase-collection
+        order-by-child="height"
+        limit-to-first="3"
+        location="https://dinosaur-facts.firebaseio.com/dinosaurs"
+        data="{{dinosaurs}}"></firebase-collection>
+      <template is="dom-repeat" items="[[dinosaurs]]" as="dinosaur">
+        <h4>[[dinosaur.__firebaseKey__]]</h4>
+        <span>Height: </span><span>[[dinosaur.height]]</span><span>m</span>
+      </template>
+    </paper-material>
+
+    <paper-material elevation="1">{{jb}}</paper-material>
+
+    <paper-material elevation="1">
+      <input value="{{inputField::input}}">
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+
+    Polymer({
+
+      is: 'page-playground',
+
+      behaviors: [HighlightBehavior],
+
+      //<page-playground role="button" aria-disabled tabindex="0"></page-playground>
+      hostAttributes: {
+        role: 'button',
+        'aria-disabled': true,
+        tabindex: 0
+      },
+
+      properties: {
+        baz: {
+          type: Object,
+          value: {
+            foo: 'bar',
+          },
+          reflectToAttribute: true,
+          readOnly: true
+        },
+        buzz: {
+          notify: true
+        },
+        first: {
+          type: String,
+          value: 'Jonathan'
+        },
+        last: {
+          type: String,
+          value: 'Belcher'
+        },
+        jb: {
+          computed: 'createName(first, last)'
+        },
+        inputField: {
+          type: String,
+          observer: '_alertChange'
+        },
+        user: {
+          type: Object,
+          value: {
+            user: {
+              manager: ['a','b']
+            }
+          }
+        }
+      },
+
+      observers: [
+        'something(inputField)',
+        'userManagerChanged(user.manager.*)'
+      ],
+
+      userManagerChanged: function(changeRecord) {
+        console.log(changeRecord.path + ' changed to ' + changeRecord.value);
+      },
+
+      something: function(inputField) {
+        console.log(inputField);
+      },
+
+      _alertChange: function() {
+        alert(this.inputField);
+      },
+
+      createName: function(first, last) {
+        return first + ' ' + last;
+      },
+
+      created: function() {
+        console.log('created');
+      },
+
+      attached: function() {
+        console.log('attached');
+      },
+
+      detached: function() {
+        console.log('detached');
+      },
+
+      ready: function() {
+        var el = new XFactory(42, 'octopus');
+        console.log('Creation of a factory: ', el.foo);
+        console.log('Creation of a factory with param1: ', el.param1);
+        console.log('Creation of a factory with param2: ', el.param2);
+
+        document.createElement('x-factory');
+      }
+
+    });
+  })();
+</script>

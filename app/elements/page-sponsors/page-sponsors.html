@@ -1,0 +1,182 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="page-sponsors">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1">
+
+      <h1>Gold Level Sponsors</h1>
+
+      <a
+        href="http://www.elsevier.com/"
+        title="Elsevier">
+        <img
+          src="/images/elsevier-logo.jpg"
+          alt="Elsevier logo">
+      </a>
+
+      <p>Elsevier is a global leader in the development and dissemination of scientific, technological and medical knowledge. We serve researchers, professionals, and clinicians, through the application of technology and analytics to content, empowering them to create knowledge, contribute to social progress, and enhance human well being. This is what Elsevier means to humankind today. Translate that into career fulfillment and you will know the real benefits of joining a company of people that is constantly innovating to inspire ground breaking research.</p>
+
+      <hr>
+
+      <p></p>
+      <a
+        href="http://www.teksystems.com/"
+        title="TEKsystems">
+        <img
+          src="/images/teksystems-logo.gif"
+          alt="TEKsystems logo">
+      </a>
+
+      <p>
+        People are at the heart of every successful business initiative. At
+        TEKsystems, a leading provider of IT staffing, IT talent management and IT
+        services, we understand people. Every year we deploy over 80,000 IT
+        professionals at 6,000 client sites across North America, Europe and Asia.
+        Our deep insights into the IT labor market enable us to help clients
+        achieve their business goals—while optimizing their IT workforce
+        strategies.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h2>Silver Level Sponsors</h2>
+
+      <a
+        href="http://chariotsolutions.com/"
+        title="Chariot Solutions">
+        <img
+          src="/images/ChariotLogo.jpg"
+          alt="Chariot logo">
+      </a>
+
+      <p>Passionate About Technology: If those three words describe you, you'll feel right at home at Chariot. We are a tight knit group of software professionals, putting our expertise to work for Philadelphia area companies every day.</p>
+
+      <hr>
+
+      <a
+        href="http://financialsystems.sungard.com/services/consulting-services"
+        title="SunGard Consulting Services Website">
+        <img src="/images/sungard-logo.jpg" alt="SunGard Logo">
+      </a>
+
+      <p>
+        SunGard’s Consulting Services help you identify and implement best
+        practice solutions to address your unique business challenges. These
+        efficiently delivered solutions help you transform your business with
+        targeted investments toward growth, optimized efficiency and predictable
+        total cost of ownership (TCO), and well-managed risk and compliance around
+        business operations.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3>Bronze Level Sponsors</h3>
+      <a
+        href="https://www.promptworks.com/"
+        title="Promptworks">
+        <img src="/images/promptworks-logo.png" alt="Promptworks Logo">
+      </a>
+      <p>The premier Philadelphia software consulting shop. We help businesses build web apps & APIs, automate processes, and scale existing products.</p>
+
+      <hr>
+
+      <a
+        href="https://www.monetate.com/"
+        title="Monetate">
+        <img src="/images/monetate-logo.png" alt="Monetate Logo" style="padding-top: 10px;">
+      </a>
+      <p>Monetate empowers marketers to leverage big data to create more personalized and engaging online customer experiences. By providing a more relevant web experience and anticipating and reacting to consumer behavior, leading brands generate stronger, more profitable customer relationships.</p>
+
+      <hr>
+
+      <a
+        href="http://www.aweber.com/home.htm"
+        title="AWeber">
+        <img
+          src="/images/aweber-logo.png"
+          alt="AWeber Logo" style="padding-top:10px;">
+      </a>
+      <p>AWeber develops and runs an opt-in email marketing service used by over 120,000+ small businesses, bloggers and entrepreneurs around the globe. Our web-based tools help businesses grow by staying in touch with customers and prospects through email.</p>
+
+      <hr>
+
+      <a href="http://www.impacthub.net/" title="Impact Hub Website">
+        <img src="/images/impact-hub-logo.png" alt="Impact Hub Logo" style="padding-top: 10px;">
+      </a>
+
+      <p>
+        An innovation lab. A business Incubator. A social enterprise community
+        center. Impact Hub offers you a unique ecosystem of resources,
+        inspiration, and collaboration opportunities to grow the positive impact
+        of your work. Joining our diverse community of members and collaborators
+        will inspire, connect, and enable you to develop your best work every step
+        of the way.
+      </p>
+
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'page-sponsors',
+      properties: {
+
+      },
+      ready: function() {
+
+      }
+    });
+  })();
+</script>

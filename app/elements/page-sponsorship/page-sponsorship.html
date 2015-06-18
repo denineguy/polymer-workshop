@@ -1,0 +1,190 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="page-sponsorship">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1">
+      <h2>Sponsorship Prospectus</h2>
+
+      <h3>What’s LibertyJS?</h3>
+
+      <p>
+        LibertyJS is the community-super-powered JavaScript conference in
+        Philadelphia, organized by the same team of Philadelphia JavaScript
+        Developers, the premier JavaScript user group with over 1000 members
+        enthusiastic about JavaScript development.
+      </p>
+
+      <p>
+        Founded in 2014, LibertyJS is the first JavaScript conference to be held
+        in Philadelphia, and had over 100 attendees in its first year. We have
+        exciting plans for 2015, and we’d love you to be a part of the event.
+      </p>
+
+      <p>
+        LibertyJS 2015 is Saturday, June 20, 2015 at ImpactHub in Philadelphia.
+      </p>
+
+      <h3>
+        Why Sponsor?
+      </h3>
+
+      <p>
+        LibertyJS provides unprecedented access to overwhelmingly local JavaScript
+        talent (although we confess to attracting some out-of-town attendees).
+        We’re gathering smart, motivated, technical individuals for one great
+        summer learning event, and by participating you’ll have the opportunity
+        to:
+      </p>
+
+      <ul>
+        <li>Recruit for JavaScript roles at your organization</li>
+        <li>Raise your profile among this specialized set of developers</li>
+        <li>Demonstrate your commitment to the JavaScript community</li>
+      </ul>
+
+      <h3>How to Sponsor?</h3>
+
+      <p>
+        Our levels of sponsorship are as follows. For higher levels,
+        logos/mentions/job postings will be larger and more prominent in all materials.
+      </p>
+
+      <h3>Gold - $1200</h3>
+
+      <ul>
+        <li>Company introduction during event opening</li>
+        <li>Table at event (if desired)</li>
+        <li>Posting on event job board (if desired)</li>
+        <li>Logo/name on event website</li>
+        <li>Twitter mentions during and leading to event</li>
+        <li>5 passes</li>
+        <li>20% discount on additional tickets (limit of 5)</li>
+      </ul>
+
+      <h3>Silver - $800</h3>
+
+      <ul>
+        <li>Table at event (if desired)</li>
+        <li>Posting on event job board (if desired)</li>
+        <li>Logo/name on event website</li>
+        <li>Twitter mentions during and leading to event</li>
+        <li>3 passes to the event</li>
+        <li>10% discount on additional tickets (limit of 5)</li>
+      </ul>
+
+      <h3>Bronze - $500</h3>
+      <p>
+        A great fit for a smaller company, or seeking a simple way to raise your
+        profile among the area’s JavaScript developers.
+      </p>
+
+      <ul>
+        <li>Posting on event job board (if desired)</li>
+        <li>Logo/name on event website</li>
+        <li>Twitter mentions during and leading to event</li>
+        <li>1 pass to the event</li>
+      </ul>
+
+      <h3>Additional sponsorship options:</h3>
+
+      <p>
+        These are great options if you’re seeking a unique way to showcase your
+        presence to attendees.
+      </p>
+
+      <h4>Lunch Sponsor: $1500</h4>
+
+      <p>
+        Be promoted as lunch sponsor for event, extra signage indicating
+        sponsorship during lunch, and your company may bring 3 company
+        representatives to lunch to mingle with JavaScript developers.
+      </p>
+
+      <h4>Breakfast Sponsor: $600</h4>
+
+      <p>
+        The “early bird” advantage - sponsor breakfast, and you’ll be very
+        visible, first thing in the morning at a central popular event location!
+      </p>
+
+      <h4>Coffee Sponsor: $500</h4>
+
+      <p>
+        No technical event should be decaffeinated. With this sponsorship, you’ll
+        provide coffee/tea/drink options throughout the day to attendees. Includes
+        “Coffee sponsored by” signage in what we all know to be a high
+        foot-traffic area of events! This can be combined with a Bronze or Silver
+        sponsorship.
+      </p>
+
+
+      <p>
+        None of these options quite what you’re looking for? Custom sponsorship
+        packages available
+      </p>
+
+      <p>Contact Pam Selle at pam at thewebivore dot com</p>
+
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'page-sponsorship',
+      properties: {
+
+      },
+      ready: function() {
+
+      }
+    });
+  })();
+</script>

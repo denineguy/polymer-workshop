@@ -1,0 +1,206 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/gold-email-input/gold-email-input.html">
+<link rel="import" href="../../bower_components/gold-phone-input/gold-phone-input.html">
+
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="page-volunteer">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1">
+      <h3>Want to be part of the best JS conference in Philadelphia?!</h3>
+
+      <p>
+        We’re organizing volunteers for Liberty JS, an all-day javascript conference
+        at Impact Hub on June 20th, 2015.
+      </p>
+
+      <h4>
+        We need people like you.
+      </h4>
+
+      <h5>
+        You could:
+      </h5>
+
+      <ul>
+        <li>
+          Help the caterering companies set up for breakfast or lunch or deck party
+        </li>
+        <li>
+          Be a TA/Room Techie
+        </li>
+        <li>
+          General setup
+        </li>
+        <li>
+          General tear down
+        </li>
+        <li>
+          Job board setup
+        </li>
+        <li>
+          Registration/sign-in
+        </li>
+        <li>
+          Social media
+        </li>
+        <li>
+          Random floor/navigation/event support
+        </li>
+      </ul>
+
+      <p>
+        We’re aiming for 2-3 hour shifts during the event if we get enough people.
+        So bring your friends!
+      </p>
+
+      <p>
+        You'll get lots of thank-you's, free entry, a free t-shirt and our best
+        attempt for you to attend the sessions you want to participate in.
+      </p>
+
+      <p>
+        We plan to communicate via google hangouts so we can help each other out. If
+        you aren't on gmail, don’t let that stop you from signing up!
+      </p>
+
+      <p>
+        Fill out the form below and we’ll send you an email with details on what
+        time to show up, and will invite you to the chatroom that day. The more the
+        merrier!
+      </p>
+    </paper-material>
+    <paper-material elevation="1">
+      <form is="iron-form" id="formGet" method="get" action="/">
+        <paper-input name="name" label="Name" required>{{entry.223260808}}</paper-input>
+        <gold-email-input name="email" label="Email" required>{{entry.1460578154}}</gold-email-input>
+        <gold-phone-input name="phone" label="Phone (optional)">{{entry.1788680539}}</gold-phone-input>
+        <paper-input name="twitter" label="Twitter (optional)">{{entry.1710818622}}</paper-input>
+        <br>
+
+        <h3>What are you Interested in helping with?</h3>
+        <div id="interests">
+          <input type="checkbox" name="anything">Anything!<br>
+          <input type="checkbox" name="registration">Registration - day of<br>
+          <input type="checkbox" name="sponsor">Sponsor table help<br>
+          <input type="checkbox" name="breakfast">Breakfast setup or teardown<br>
+          <input type="checkbox" name="lunch">Lunch setup or teardown<br>
+          <input type="checkbox" name="happyhour">Happy hour setup or teardown<br>
+          <input type="checkbox" name="socialmedia">Social media/photos<br>
+          <input type="checkbox" name="techhelp">Tech help during workshops<br>
+        </div>
+        <h3>Preferred time slot</h3>
+        <div id="time">
+          <input type="checkbox" name="morning">Morning<br>
+          <input type="checkbox" name="midday">Midday<br>
+          <input type="checkbox" name="afternoon">Afternoon<br>
+          <input type="checkbox" name="anytime">Anytime<br>
+        </div>
+
+        <br><br>
+
+        <paper-button
+          raised
+          on-click="submitForm">
+          Submit
+        </paper-button>
+      </form>
+    </paper-material>
+    <paper-material elevation="1">
+      <iframe
+        src="https://docs.google.com/forms/d/1VvwYRgnt1_mMZQHh6-_94h2CE11-I1OGiq9H44PiFCc/viewform?embedded=true"
+        width="500"
+        height="1250"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading...
+      </iframe>
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    var ironAjax;
+
+    function submitForm(event) {
+
+    }
+
+    Polymer({
+
+      is: 'page-volunteer',
+
+      properties: {
+        entry: {
+          type: Object,
+          value: {
+            fbzx: 264597229015009400
+          }
+        }
+      },
+
+      submitForm: function(event) {
+        var url = 'https://docs.google.com/forms/d/1VvwYRgnt1_mMZQHh6-_94h2CE11-I1OGiq9H44PiFCc/formResponse';
+        debugger;
+      },
+
+      ready: function() {
+        ironAjax = ironAjax || document.createElement('iron-ajax');
+      }
+
+    });
+  })();
+</script>

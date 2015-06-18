@@ -1,0 +1,309 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="page-sessions">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+
+    <paper-material elevation="1">
+
+      <h3 id="denineguy">Denine Guy - Future of Web App Development - Building with Polymer.js</h3>
+      <p>
+        Are you a front-end/JavaScript developer that is looking to develop
+        evergreen applications (apps that will be fresh this year, next year and
+        even the year after that)?  Do you want to use the coolest and latest
+        technologies to develop apps with the most progressive techniques and
+        tools? This session will introduce futuristic developers to Polymer.js: a
+        library created by Google which makes building custom elements easy.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="kenrimple">Ken Rimple - Getting started with AngularJS</h3>
+      <p>
+        An introduction to AngularJS that will get you up to speed with building
+        your own applications. We will build a small application using AngularJS
+        and several key modules. An emphasis will be placed on testing using
+        Jasmine. You will be required to download and set up the project shell
+        before the workshop. Details will be provided.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="chadostrowski">Chad Ostrowski - Starting to React</h3>
+      <p>
+        Learning React is easier than you think! This workshop will start with a
+        quick explanation of how React fits into the landscape of all the
+        newfangled JavaScript libraries. And then we'll dig in!
+      </p>
+      <p>
+        We'll go through tutorials together that help you understand the basics of
+        React. By the end of the workshop, you'll likely want to go start building
+        stuff with React!
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="maxminkoff">Max Minkoff - Getting Started and Going Further with EmberJS</h3>
+      <p>
+        Bring your laptop as we walk through building an EmberJS application using
+        the powerful Ember-CLI tool and QUnit for testing.  We’ll review exciting
+        features such as the Glimmer rendering engine and the upcoming FastBoot,
+        using Ember Data, Ember Addons, deployment options, and more.  Learn how
+        Ember delivers Stability without Stagnation by embracing new technologies
+        and standards while maintaining backward compatibility and manageable
+        upgrade paths.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="kendale">Ken Dale - Bring the Rain: Cloud Powered Continuous Delivery</h3>
+      <p>
+        Moving fast and being agile is a hot topic today. Don't be left in the
+        dust: Learn to harness the power of the cloud and strap a rocket-sled to
+        your build, test, and deployment processes. Attendees will watch a project
+        go from zero to cloud tested and deployed using popular services and
+        technologies in under an hour. It really is *that* easy -- and it will
+        all happen live. Helpful metrics, prestigious badges, and a few laughs at
+        those inevitable (and hopefully infrequent) build failure notifications
+        are all part of the fun, helping these cloud powered continuous
+        integration methodologies stick with attendees after returning home.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="tommyeverett">Tommy Everett - JS Code Evaluation: Soup to Nuts</h3>
+      <p>
+        Many JS programmers have little or poor understanding of what actually
+        happens to the JS code they write. This talk will cover the process of
+        taking JavaScript code, parsing, compiling, and executing it in a general
+        fashion - though some attention to the details of the SpiderMonkey, V8,
+        and Higgs JavaScript engines will be paid.
+      </p>
+
+      <p>
+        Starting with a quick overview of the ES standard/process, we'll move on
+        to parsing, and then lexical analysis - with a brief discussion of the
+        quirks/features of JS in this area such as ambiguity between object
+        literals/blocks, semicolons, etc.
+      </p>
+
+      <p>
+        Next is a general overview of the compiler/interpreter architecture of
+        some of the main JS engines, and how they differ from each other - some
+        of the benefits/drawbacks, etc. Whether they use an interpreter, what
+        different types of compilers they use, etc.
+      </p>
+
+      <p>
+        If time allows, we may get into some of the features of JS that compiler
+        writers have difficulty optimizing as well as some other related concepts
+        like asm.js.
+      </p>
+
+      <p>
+        Ideally audience members will have heard of phrases like "parsing" and
+        "compiler" but not be entirely sure how they actually work and how they
+        relate to JS - and walk away with a better overall understanding of the
+        concepts and be able to describe in a general (possibly specific) fashion
+        what happens to their code once they give it to the JS engine.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="douglasgrogg">
+        Douglas Grogg, Justin Thomas and Alexandra Hoefinger - Ditch Your
+        Framework, or How we learned to stop worrying and love ES6
+      </h3>
+      <p>
+        At Urban Outfitters we pride ourselves on working with, and investing in
+        modern web development tools. On a recent project, after much debate, we
+        decided to forgo using any framework, because of 3 new features that ES6
+        gave us: Promises, Modules, and proper Classes. ES6 gives developers the
+        foundation to build complex apps in native JS. No more black boxes. Write
+        code that is powerful and 100% yours.
+      </p>
+
+      <p>
+        In this session we would discuss, why the dependency load of a framework
+        might no longer be necessary. We will go through how to implement ES6
+        features in your app design patterns, with a primary focus on Promises,
+        Classes, and Modules, but also touch on fat arrows, block scoping, string
+        interpolation, and destructuring. We'll also explain how to use ES6 now
+        (its only natively supported in Firefox currently, Edge and Chrome in the
+        fall) via BabelJS and Browserify, and how to include it in your gulp
+        workflow. Finally we will go over the drawbacks and additional
+        complexities that are involved when you no longer have a framework to fill
+        in the gaps.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="williamjeffries">William Jeffries - Cognitive Bias and Code</h3>
+      <p>
+        In this talk, we'll discuss several cognitive biases, how they're hurting
+        your codebase, and what to do about them.
+      </p>
+
+      <p>
+        We'll begin with an explanation of the familiarity, availability, and
+        anchoring biases, with examples of each. Then we'll discuss their effects
+        on design choices in code, with examples. Lastly we'll talk about how your
+        team can deal with them more effectively.
+      </p>
+
+      <p>
+        You'll walk away with a better understanding of cognitive biases and how
+        to protect your codebase from them.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="kevinclough">Kevin Clough and Lauren Ancona - Who Won Philly</h3>
+      <p>
+        Tim Wisniewski wrote an election scraper with Kimono and a html page to
+        display live election results scraped from
+        <a href="http://phillyelectionresults.com/">
+          http://phillyelectionresults.com/
+        </a>. Kevin Clough wrote a node scraper based on
+        <a href="https://github.com/segmentio/nightmare">Nightmare</a> to poll the
+        last modified date of the page, scrape and cache the results as necessary.
+        Live Results can be viewed here:
+        <a href="http://www.whowonphilly.com/">http://www.whowonphilly.com/</a>
+      </p>
+      <p>
+        This session will talk about why we made this, what Code for Philly is,
+        what technology we used, and cover how to make a scraper with
+        NodeJS/Nightmare.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="warrenlongmire">Warren Longmire - Intro to HTML5 Game Development</h3>
+      <p>
+        In this talk, serious games developer Warren C Longmire, an instructor
+        with the New York Code and Design Academy, will take you through how to do
+        advanced graphics, tweening, interactivity and game development using
+        create.js and greensock's gsap tweening system. Using these tools, you
+        will have the tool necessary to quickly create data visualizations, simple
+        games and image processing tools that can work on any browser.
+      </p>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="benspoon">Ben Spoon - Protect yourself from Zombies with Javascript</h3>
+      <p>
+        An overview of just some of the many things that you can do with
+        Javascript told in the form of a story about being attacked by zombies.
+      </p>
+
+      <p>Technologies include:</p>
+
+      <ul>
+        <li>Robots (also drones)</li>
+        <li>Home Automation</li>
+        <li>SMTP Servers</li>
+        <li>Web Servers</li>
+        <li>Interactive Web Sites</li>
+        <li>Mapping</li>
+        <li>Live demo</li>
+      </ul>
+
+    </paper-material>
+
+    <paper-material elevation="1">
+
+      <h3 id="kellycampbell">Kelly Campbell - Digging into Cordova Plugins</h3>
+      <p>
+        Cordova is a platform to create apps for Android, iPhone, and other mobile
+        platforms using primarily HTML and JavaScript. Cordova plugins give these
+        apps ability to interface to the native platform to interface with things
+        like the camera, filesystem, or even your own native drivers to external
+        devices.
+      </p>
+      <p>
+        I'll show how some of the standard Cordova plugins are used, and then how
+        to make a native plugin for Android."
+      </p>
+
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'page-sessions',
+      properties: {
+
+      },
+      ready: function() {
+
+      }
+    });
+  })();
+</script>

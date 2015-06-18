@@ -1,0 +1,183 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/google-map/google-map.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="page-home">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+
+    google-map {
+      width: 100%;
+      height: 250px;
+    }
+
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1">
+      <img
+        class="title-image"
+        src="/images/logo-full.png"
+        alt="LibertyJS Logo">
+      <h2>LibertyJS</h2>
+      <p>
+        Your friendly Philly JavaScript conference.
+      </p>
+
+      <p>
+        Come to LibertyJS for a full day of workshops, talks, and lots of
+        JavaScript fun!
+      </p>
+
+      <p>
+        Saturday, June 20th, 2015 at
+        <a href="http://philadelphia.impacthub.net/" target="_blank">
+          Impact Hub Philadelphia
+        </a>
+      </p>
+
+      <p>
+        <a href="https://twitter.com/liberty_js"
+          class="twitter-follow-button"
+          data-show-count="false"
+          data-size="large"
+          data-dnt="true">
+          Follow @liberty_js
+        </a>
+      </p>
+    </paper-material>
+    <paper-material>
+      <google-map fit-to-markers zoom="15">
+        <google-map-marker latitude="39.970827" longitude="-75.142762"></google-map-marker>
+      </google-map>
+      <!-- https://elements.polymer-project.org/elements/google-map -->
+      <!-- <div class="google-maps">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.6806119456114!2d-75.14261199999999!3d39.970893000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c871dfc8abef%3A0xca81755991ee7356!2sImpact+Hub+Philadelphia!5e0!3m2!1sen!2sus!4v1431988110556"
+          width="500"
+          height="250"
+          frameborder="0"
+          style="border:0">
+        </iframe>
+      </div> -->
+    </paper-material>
+    <paper-material>
+      <h2>Sponsors</h2>
+      <h3>Gold</h3>
+
+      <a
+        href="http://www.elsevier.com/"
+        title="Elsevier">
+        <img
+          src="/images/elsevier-logo.jpg"
+          alt="Elsevier logo">
+      </a>
+
+      <a
+        href="http://www.teksystems.com/"
+        title="TEKsystems">
+        <img
+          src="/images/teksystems-logo.gif"
+          alt="TEKsystems logo">
+      </a>
+
+      <h3>Silver</h3>
+      <a
+        href="http://chariotsolutions.com/"
+        title="Chariot Solutions">
+        <img
+          src="/images/ChariotLogo.jpg"
+          alt="Chariot logo">
+      </a>
+
+      <a
+        href="http://financialsystems.sungard.com/services/consulting-services"
+        title="SunGard Consulting Services">
+        <img
+          src="/images/sungard-logo.jpg"
+          alt="SunGard Logo">
+      </a>
+
+      <h3>Bronze</h3>
+      <a
+        href="https://www.promptworks.com/"
+        title="Promptworks">
+        <img src="/images/promptworks-logo.png" alt="Promptworks Logo">
+      </a>
+      <a
+        href="https://www.monetate.com/"
+        title="Monetate">
+        <img src="/images/monetate-logo.png" alt="Monetate Logo">
+      </a><br>
+      <a
+        href="http://www.aweber.com/home.htm"
+        title="AWeber">
+        <img
+          src="/images/aweber-logo.png"
+          alt="AWeber Logo" style="padding:5px;">
+      </a><br>
+      <a
+        href="http://www.impacthub.net/"
+        title="Impact Hub Website">
+        <img
+          src="/images/impact-hub-logo.png"
+          alt="Impact Hub Logo" style="padding:5px;">
+      </a>
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'page-home',
+      properties: {
+
+      },
+      ready: function() {
+
+      }
+    });
+  })();
+</script>

@@ -1,0 +1,117 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="page-call-for-proposals">
+  <style>
+    :host {
+      display: block;
+    }
+    paper-material {
+      border-radius: 2px;
+      height: 100%;
+      padding: 16px 0 16px 0;
+      width: calc(98.66% - 16px);
+      margin: 16px auto;
+      background: white;
+    }
+    /* Breakpoints */
+
+    /* Small */
+    @media (max-width: 600px) {
+
+      paper-material {
+        --menu-container-display: none;
+        width: calc(97.33% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    }
+
+    /* Tablet+ */
+    @media (min-width: 601px) {
+
+      paper-material {
+        width: calc(98% - 46px);
+        margin-bottom: 32px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  </style>
+  <template>
+    <paper-material elevation="1">
+      <h2>Call For Proposals</h2>
+      <p>
+        You should speak at LibertyJS! Yes you! We are looking for Speakers and
+        Workshop Facilitators.
+      </p>
+      <h3>The Process</h3>
+      <ul>
+        <li>
+          We anonymize submissions, to avoid bias.
+        </li>
+        <li>A panel of four will score each proposal on 0 to 10 scale</li>
+        <li>Scores are tallied</li>
+        <li>
+          A second round of votes will be tallied based on de-anonymized
+          proposals.  This round will account for ability to cover travel, under
+          represented individuals and new speakers.
+        </li>
+      </ul>
+
+      <p>Panelists will be chosen from varied level of experience and gender</p>
+
+      <h3>What we are looking for</h3>
+
+      <p>
+        We are looking for several Workshop leaders for the morning sessions.
+        Topics should appeal to wide audience of JavaScript developers.  Last year
+        our workshops included: AngularJS, Node, and an Intro to JS.
+        Proposed workshops include: AngularJS, EmberJS, React, Polymer, JavaScript
+        design patterns, functional JavaScript, etc. This list is not exhaustive
+        and all proposals are welcome.
+      </p>
+
+      <p>
+        We are looking for five speakers for the afternoon session.  All topics
+        are welcome but should involve JavaScript. Please take into account that
+        LibertyJS attendees will be of varied skill levels.
+      </p>
+
+      <h3>Call for Proposals ends Friday 5/29/2015</h3>
+
+      <iframe
+        src="https://docs.google.com/forms/d/1iK_SvZ2hqv2_gQQZWC8P6X3ToCyBN4PyeoW-hSkFQFk/viewform?embedded=true"
+        width="500"
+        height="1150"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading...
+      </iframe>
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'page-call-for-proposals',
+      properties: {
+
+      },
+      ready: function() {
+
+      }
+    });
+  })();
+</script>
