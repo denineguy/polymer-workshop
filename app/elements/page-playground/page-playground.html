@@ -20,7 +20,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
+      --page-playground-title-color: green;
+      --page-playground-title-2: {
+        color: pink;
+        background-color: green;
+      };
     }
+
+    h1 {
+      color: var(--page-playground-title-color);
+    }
+
+    h2 {
+      @apply(--page-playground-title-2);
+    }
+
     paper-material {
       border-radius: 2px;
       height: 100%;
@@ -28,6 +42,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width: calc(98.66% - 16px);
       margin: 16px auto;
       background: white;
+    }
+    paper-material > ::content p {
+      color: #888888;
     }
     /* Breakpoints */
 
@@ -56,7 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-    <paper-material elevation="1">
+    <paper-material id="special" elevation="1">
       <firebase-collection
         order-by-child="height"
         limit-to-first="3"
@@ -72,6 +89,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-material elevation="1">
       <input value="{{inputField::input}}">
+    </paper-material>
+
+    <paper-material elevation="1">
+      <template is="dom-if" if="{{inputField}}">
+        There is text in the input field
+      </template>
+    </paper-material>
+
+    <paper-material elevation="1">
+      <template is="dom-repeat" items="{{days}}" as="day">
+        <p>{{day}}</p>
+      </template>
+      <button on-click="addDay">Add Friday</button>
+    </paper-material>
+
+    <paper-material elevation="1">
+      <h1 id="changeText">Origional Text</h1>
+      <input value="{{changeTextField::input}}">
+      <button on-click="changeText">Change Text</button>
+      <button on-click="changeText2">Change Text 2</button>
+    </paper-material>
+
+    <paper-material elevation="1">
+      <h2>{{bindingTextField}}</h2>
+      <input value="{{bindingTextField::input}}">
     </paper-material>
   </template>
 </dom-module>
@@ -118,24 +160,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           type: String,
           observer: '_alertChange'
         },
-        user: {
-          type: Object,
-          value: {
-            user: {
-              manager: ['a','b']
-            }
-          }
+        days: {
+          type: Array,
+          value: ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
         }
       },
 
       observers: [
-        'something(inputField)',
-        'userManagerChanged(user.manager.*)'
+        'something(inputField)'
       ],
 
-      userManagerChanged: function(changeRecord) {
-        console.log(changeRecord.path + ' changed to ' + changeRecord.value);
-      },
+      // Commented out because it is annoying to have always on
+      // down, up, tap, track also avail
+      // listeners: {
+      //   'tap': 'regularTap',
+      //   'special.tap': 'specialTap'
+      // },
+      //
+      // regularTap: function(e) {
+      //   alert("Thank you for tapping");
+      // },
+      //
+      // specialTap: function(e) {
+      //   alert("It was special tapping");
+      // },
 
       something: function(inputField) {
         console.log(inputField);
@@ -159,6 +207,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       detached: function() {
         console.log('detached');
+      },
+
+      addDay: function() {
+        //Doesn't work
+        //this.days.push('Friday');
+        //Does work
+        this.push('days', 'Friday');
+      },
+
+      changeText: function() {
+        this.$.changeText.textContent = this.changeTextField;
+      },
+
+      changeText2: function() {
+        Polymer.dom(this.$.changeText).textContent = this.changeTextField;
       },
 
       ready: function() {
