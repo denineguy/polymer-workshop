@@ -90,16 +90,16 @@ gulp.task('copy', function () {
   }).pipe(gulp.dest('dist'));
 
   var bower = gulp.src([
-    'bower_components/**/*'
+    'app/bower_components/**/*'
   ]).pipe(gulp.dest('dist/bower_components'));
 
   var elements = gulp.src(['app/elements/**/*.html'])
     .pipe(gulp.dest('dist/elements'));
 
-  var swBootstrap = gulp.src(['bower_components/platinum-sw/bootstrap/*.js'])
+  var swBootstrap = gulp.src(['app/bower_components/platinum-sw/bootstrap/*.js'])
     .pipe(gulp.dest('dist/elements/bootstrap'));
 
-  var swToolbox = gulp.src(['bower_components/sw-toolbox/*.js'])
+  var swToolbox = gulp.src(['app/bower_components/sw-toolbox/*.js'])
     .pipe(gulp.dest('dist/sw-toolbox'));
 
   var vulcanized = gulp.src(['app/elements/elements.html'])
@@ -167,7 +167,7 @@ gulp.task('precache', function (callback) {
     if (error) {
       callback(error);
     } else {
-      files.push('index.html', './', 'bower_components/webcomponentsjs/webcomponents-lite.min.js');
+      files.push('index.html', './', 'app/bower_components/webcomponentsjs/webcomponents-lite.min.js');
       var filePath = path.join(dir, 'precache.json');
       fs.writeFile(filePath, JSON.stringify(files), callback);
     }
@@ -196,7 +196,7 @@ gulp.task('serve', ['styles', 'elements', 'images'], function () {
     server: {
       baseDir: ['.tmp', 'app'],
       routes: {
-        '/bower_components': 'bower_components',
+        '/app/bower_components': 'bower_components',
         '/app/elements': 'elements'
       }
     }
